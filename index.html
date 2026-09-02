@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orion — Seu tutor financeiro pessoal</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="#" class="logo">
+        <span class="logo__icon">✦</span>
+        <span class="logo__text">Orion</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#tutor">Seu tutor</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#planos">Planos</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#" class="btn btn--ghost">Entrar</a>
+        <a href="#" class="btn btn--lime">Começar agora</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container hero__container">
+      <!-- Lado esquerdo -->
+      <div class="hero__content">
+        <span class="hero__tag">SEU TUTOR FINANCEIRO</span>
+        <h1 class="hero__title">
+          Seu dinheiro.<br />
+          <span class="highlight">Agora tem um plano.</span>
+        </h1>
+        <p class="hero__sub">
+          Um tutor financeiro inteligente que entende seus números, acompanha seus objetivos e ajuda você a tomar decisões melhores.
+        </p>
+        <div class="hero__buttons">
+          <a href="#" class="btn btn--lime btn--large">Começar agora →</a>
+          <a href="#como-funciona" class="btn btn--outline">Como funciona</a>
+        </div>
+      </div>
+
+      <!-- Lado direito — composição cinematográfica -->
+      <div class="hero__visual" id="heroVisual">
+        <div class="visual__scene">
+          <!-- Camada de fundo com gradiente orgânico -->
+          <div class="visual__bg"></div>
+
+          <!-- Silhueta / figura humana abstrata -->
+          <div class="visual__figure"></div>
+
+          <!-- Interfaces flutuantes -->
+          <div class="visual__card card--finance">
+            <span class="card__label">Saúde financeira</span>
+            <span class="card__number">82/100</span>
+            <div class="card__bar">
+              <div class="card__bar-fill" style="width:82%"></div>
+            </div>
+            <span class="card__status">Excelente</span>
+          </div>
+
+          <div class="visual__card card--insight">
+            <span class="card__label">💡 Recomendação</span>
+            <span class="card__text">Reduza R$ 320 em alimentação</span>
+          </div>
+
+          <div class="visual__card card--mini">
+            <span class="card__label">Receita</span>
+            <span class="card__number">R$ 6.850</span>
+          </div>
+
+          <div class="visual__card card--mini">
+            <span class="card__label">Economia</span>
+            <span class="card__number">+R$ 2.620</span>
+          </div>
+
+          <!-- Gráfico abstrato -->
+          <svg class="visual__chart" viewBox="0 0 200 80" fill="none">
+            <path d="M0 60 L20 50 L45 55 L70 30 L95 45 L120 15 L145 25 L175 10 L200 20" stroke="url(#chartGrad2)" stroke-width="2.5" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="chartGrad2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#C7FF35" stop-opacity="0.1" />
+                <stop offset="40%" stop-color="#C7FF35" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#C7FF35" stop-opacity="0.1" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Partículas verdes -->
+          <div class="visual__particles" id="particles"></div>
+
+          <!-- Glow orgânico -->
+          <div class="visual__glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__bg-line"></div>
+  </section>
+
+  <!-- ========== SEÇÃO TUTOR (INTERFACE) ========== -->
+  <section class="tutor" id="tutor">
+    <div class="container tutor__container">
+      <div class="tutor__header">
+        <span class="tutor__tag">SEU TUTOR</span>
+        <h2 class="tutor__title">Ele conhece suas finanças melhor do que você imagina.</h2>
+      </div>
+
+      <div class="tutor__interface">
+        <div class="tutor__card">
+          <div class="tutor__greeting">
+            <span class="tutor__avatar">🧑‍💻</span>
+            <div>
+              <span class="tutor__name">Bom dia 👋</span>
+              <span class="tutor__sub">Analisei suas finanças deste mês.</span>
+            </div>
+          </div>
+
+          <div class="tutor__health">
+            <span class="tutor__health-label">Sua saúde financeira está:</span>
+            <span class="tutor__health-number">82/100</span>
+            <div class="tutor__health-bar">
+              <div class="tutor__health-fill" style="width:82%"></div>
+            </div>
+            <span class="tutor__health-status">Você está indo muito bem.</span>
+          </div>
+
+          <div class="tutor__alerts">
+            <span class="tutor__alert-title">⚠️ Encontrei 2 pontos que merecem atenção:</span>
+            <div class="tutor__alert-item">
+              <span>Alimentação</span>
+              <span class="negative">+18% este mês</span>
+            </div>
+            <div class="tutor__alert-item">
+              <span>Assinaturas</span>
+              <span class="negative">R$ 97 acima do planejado</span>
+            </div>
+          </div>
+
+          <div class="tutor__recommendation">
+            <span class="tutor__rec-label">💡 Minha recomendação:</span>
+            <p class="tutor__rec-text">
+              Se você reduzir <strong>R$ 320</strong> nos próximos 30 dias, poderá alcançar sua meta <strong>12 dias mais cedo</strong>.
+            </p>
+          </div>
+
+          <a href="#" class="btn btn--lime tutor__btn">Ver meu plano</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO "SEU DINHEIRO ESTÁ TENTANDO TE DIZER" ========== -->
+  <section class="message" id="como-funciona">
+    <div class="container message__container">
+      <div class="message__header">
+        <h2 class="message__title">Seu dinheiro está tentando te dizer alguma coisa.</h2>
+        <p class="message__sub">Seu tutor transforma números, gastos e objetivos em orientações simples para você saber exatamente o que fazer.</p>
+      </div>
+
+      <div class="message__grid">
+        <div class="message__block block--entenda">
+          <span class="block__number">01</span>
+          <span class="block__icon" data-lucide="eye"></span>
+          <h3 class="block__title">Entenda</h3>
+          <p class="block__desc">Veja para onde seu dinheiro está indo com clareza e transparência.</p>
+        </div>
+        <div class="message__block block--planeje">
+          <span class="block__number">02</span>
+          <span class="block__icon" data-lucide="target"></span>
+          <h3 class="block__title">Planeje</h3>
+          <p class="block__desc">Defina metas realistas e crie um plano financeiro personalizado.</p>
+        </div>
+        <div class="message__block block--evolua">
+          <span class="block__number">03</span>
+          <span class="block__icon" data-lucide="trending-up"></span>
+          <h3 class="block__title">Evolua</h3>
+          <p class="block__desc">Acompanhe seu progresso todos os meses e comemore cada avanço.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO RAIO-X FINANCEIRO ========== -->
+  <section class="xray" id="recursos">
+    <div class="container xray__container">
+      <div class="xray__header">
+        <h2 class="xray__title">Veja sua vida financeira de outro ângulo.</h2>
+      </div>
+
+      <div class="xray__grid">
+        <div class="xray__health">
+          <span class="xray__health-label">SAÚDE FINANCEIRA</span>
+          <span class="xray__health-number">82/100</span>
+          <span class="xray__health-status">Excelente</span>
+          <div class="xray__health-bar">
+            <div class="xray__health-fill" style="width:82%"></div>
+          </div>
+        </div>
+
+        <div class="xray__stats">
+          <div class="xray__stat">
+            <span class="xray__stat-label">Receita</span>
+            <span class="xray__stat-value">R$ 6.850</span>
+          </div>
+          <div class="xray__stat">
+            <span class="xray__stat-label">Despesas</span>
+            <span class="xray__stat-value negative">R$ 4.230</span>
+          </div>
+          <div class="xray__stat">
+            <span class="xray__stat-label">Economia</span>
+            <span class="xray__stat-value positive">R$ 2.620</span>
+          </div>
+          <div class="xray__stat">
+            <span class="xray__stat-label">Reserva</span>
+            <span class="xray__stat-value">R$ 8.430</span>
+          </div>
+        </div>
+
+        <div class="xray__chart">
+          <canvas id="chartXray" width="300" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO METAS ========== -->
+  <section class="goals" id="metas">
+    <div class="container goals__container">
+      <div class="goals__header">
+        <h2 class="goals__title">Todo objetivo começa com um número.</h2>
+      </div>
+
+      <div class="goals__grid">
+        <div class="goal goal--featured">
+          <span class="goal__icon">🏠</span>
+          <span class="goal__label">Minha casa</span>
+          <span class="goal__value">R$ 35.000</span>
+          <div class="goal__bar">
+            <div class="goal__bar-fill" style="width:67%"></div>
+          </div>
+          <span class="goal__percent">67%</span>
+        </div>
+        <div class="goal">
+          <span class="goal__icon">🚗</span>
+          <span class="goal__label">Meu carro</span>
+          <span class="goal__value">R$ 18.000</span>
+          <div class="goal__bar">
+            <div class="goal__bar-fill" style="width:42%"></div>
+          </div>
+          <span class="goal__percent">42%</span>
+        </div>
+        <div class="goal">
+          <span class="goal__icon">✈️</span>
+          <span class="goal__label">Minha viagem</span>
+          <span class="goal__value">R$ 6.000</span>
+          <div class="goal__bar">
+            <div class="goal__bar-fill" style="width:81%"></div>
+          </div>
+          <span class="goal__percent">81%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO CONVERSA ========== -->
+  <section class="chat" id="chat">
+    <div class="container chat__container">
+      <div class="chat__header">
+        <h2 class="chat__title">Pergunte. Seu tutor responde.</h2>
+      </div>
+
+      <div class="chat__interface">
+        <div class="chat__message chat--user">
+          <span class="chat__avatar">👤</span>
+          <div class="chat__bubble">Posso comprar uma moto este ano?</div>
+        </div>
+        <div class="chat__message chat--tutor">
+          <span class="chat__avatar">🧑‍💻</span>
+          <div class="chat__bubble">Sim. Considerando sua renda atual e seus gastos médios, o ideal seria reservar aproximadamente <strong>R$ 480</strong> por mês.</div>
+        </div>
+        <div class="chat__message chat--user">
+          <span class="chat__avatar">👤</span>
+          <div class="chat__bubble">Onde estou gastando demais?</div>
+        </div>
+        <div class="chat__message chat--tutor">
+          <span class="chat__avatar">🧑‍💻</span>
+          <div class="chat__bubble">Seus gastos com alimentação cresceram <strong>21%</strong> nos últimos dois meses.</div>
+        </div>
+        <div class="chat__input">
+          <input type="text" placeholder="Digite sua pergunta..." />
+          <button class="btn btn--lime">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO INSIGHTS ========== -->
+  <section class="insights" id="insights">
+    <div class="container insights__container">
+      <div class="insights__header">
+        <h2 class="insights__title">Pequenas decisões.<br />Grandes mudanças.</h2>
+      </div>
+
+      <div class="insights__grid">
+        <div class="insight">
+          <span class="insight__number">+18%</span>
+          <span class="insight__label">economia</span>
+        </div>
+        <div class="insight">
+          <span class="insight__number negative">-12%</span>
+          <span class="insight__label">gastos desnecessários</span>
+        </div>
+        <div class="insight">
+          <span class="insight__number">+R$ 840</span>
+          <span class="insight__label">guardados</span>
+        </div>
+        <div class="insight">
+          <span class="insight__number">+2 meses</span>
+          <span class="insight__label">de reserva</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO BENEFÍCIOS ========== -->
+  <section class="benefits" id="beneficios">
+    <div class="container benefits__container">
+      <div class="benefits__header">
+        <h2 class="benefits__title">Mais do que controlar.<br />Aprenda a cuidar.</h2>
+      </div>
+
+      <div class="benefits__grid">
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="layout-dashboard"></span>
+          <span class="benefit__name">Organização</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="clipboard-check"></span>
+          <span class="benefit__name">Planejamento</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="target"></span>
+          <span class="benefit__name">Metas</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="bar-chart-3"></span>
+          <span class="benefit__name">Análises</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="message-circle"></span>
+          <span class="benefit__name">Recomendações</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit__icon" data-lucide="activity"></span>
+          <span class="benefit__name">Acompanhamento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEGURANÇA ========== -->
+  <section class="security" id="security">
+    <div class="container security__container">
+      <h2 class="security__title">Seu dinheiro é pessoal.<br />Seus dados também.</h2>
+      <div class="security__grid">
+        <div class="security__item">
+          <span data-lucide="lock"></span>
+          <h3>Criptografia</h3>
+          <p>Padrão AES-256 para todos os seus dados.</p>
+        </div>
+        <div class="security__item">
+          <span data-lucide="shield"></span>
+          <h3>Privacidade</h3>
+          <p>Seus dados nunca são compartilhados com terceiros.</p>
+        </div>
+        <div class="security__item">
+          <span data-lucide="database"></span>
+          <h3>Backup</h3>
+          <p>Backup automático diário para sua segurança.</p>
+        </div>
+        <div class="security__item">
+          <span data-lucide="fingerprint"></span>
+          <h3>Proteção</h3>
+          <p>Autenticação multifator em todas as entradas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PLANOS ========== -->
+  <section class="pricing" id="planos">
+    <div class="container pricing__container">
+      <div class="pricing__header">
+        <h2 class="pricing__title">Escolha seu próximo nível financeiro.</h2>
+      </div>
+
+      <div class="pricing__grid">
+        <div class="plan">
+          <span class="plan__name">Essencial</span>
+          <span class="plan__price">R$ 19<span>/mês</span></span>
+          <ul class="plan__features">
+            <li>Controle financeiro básico</li>
+            <li>Relatórios mensais</li>
+            <li>1 meta ativa</li>
+          </ul>
+          <a href="#" class="btn btn--outline">Assinar</a>
+        </div>
+
+        <div class="plan plan--featured">
+          <span class="plan__badge">Recomendado</span>
+          <span class="plan__name">Pro</span>
+          <span class="plan__price">R$ 59<span>/mês</span></span>
+          <ul class="plan__features">
+            <li>Tudo do Essencial</li>
+            <li>Análises avançadas</li>
+            <li>Metas ilimitadas</li>
+            <li>Recomendações personalizadas</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <a href="#" class="btn btn--lime">Começar agora</a>
+        </div>
+
+        <div class="plan">
+          <span class="plan__name">Premium</span>
+          <span class="plan__price">R$ 129<span>/mês</span></span>
+          <ul class="plan__features">
+            <li>Tudo do Pro</li>
+            <li>Consultoria financeira</li>
+            <li>API para integrações</li>
+            <li>Prioridade no atendimento</li>
+          </ul>
+          <a href="#" class="btn btn--outline">Assinar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section class="cta" id="cta">
+    <div class="container cta__container">
+      <div class="cta__content">
+        <h2 class="cta__title">Seu dinheiro não precisa ser um problema.</h2>
+        <p class="cta__text">Comece hoje a construir uma vida financeira mais organizada.</p>
+        <a href="#" class="btn btn--lime btn--large">Começar agora →</a>
+      </div>
+      <div class="cta__glow"></div>
+      <div class="cta__particles" id="ctaParticles"></div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__col">
+        <a href="#" class="logo logo--footer">
+          <span class="logo__icon">✦</span>
+          <span class="logo__text">Orion</span>
+        </a>
+        <p class="footer__desc">Seu tutor financeiro pessoal. Inteligência para cuidar do seu dinheiro.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Produto</h4>
+        <ul>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Recursos</a></li>
+          <li><a href="#">Planos</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>&copy; 2026 Orion. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
